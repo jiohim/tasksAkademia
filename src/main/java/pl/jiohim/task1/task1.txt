@@ -1,0 +1,46 @@
+
+
+
+1.A. W jakim celu używa się klas abstrakcyjnych, a w jakim interfejsów?
+
+Używamy interfejsów:
+    - Jeśli сhcemy skorzystać z dziedziczenia wielu typów;
+    - Planuje się, że interfejs zaimplementują klasy niepowiązane. Na przykład interfejsy
+Comparable i Cloneable są implementowane przez wiele niepowiązanych klas.koncepcyjnym celem
+interfejsu jest opisanie „zachowania”, a nie „stanu” (w przeciwieństwie do klasy abstrakcyjnej).
+W związku z tym wszelkie niepowiązane ze sobą klasy, które po prostu muszą „być w stanie” coś
+zrobić lub „jakoś” się zachowywać, mogą zaimplementować to zachowanie;
+    - Chcemy uszczegółowić lub zdefiniować zachowanie określonego typu danych, ale nie chcemy
+się martwić,kto implementuje jego zachowanie. Nie ma dla nas różnicy, które klasy zaimplementują
+nasz interfejs i w jakich pakietach się znajdują. Chcemy tylko, żeby zachowywały się zgodnie z
+„naszą umową”, zapisaną w interfejsie jako metody bez implementacji;
+
+Używamy klas abstrakcyjnych:
+    -Potrzebujemy wyizolować wspólny kod między kilkoma blisko spokrewnionymi klasami, celem tego jest
+wyeliminowanie duplikacji kodu;
+    -Oczekujemy, że klasy dziedziczące klasę abstrakcyjną, będą miały wiele wspólnych metod, pól
+lub wymagają modyfikatorów dostępu innych niż public (protected, private).Poniewaz w interfejsach
+metody, które mają implementację (oznaczone słowem kluczowym default) są niejawnie publiczne;
+    -Chcemy zadeklarować "non static" lub "non final" pola, aby zmienić stan obiektu.Bo wszystkie zmienne
+w interfejsach są domyślnie public static final  - dlatego nie można ich zmienić.
+
+
+
+
+1.B. Czym różni się tablica od listy liniowej?
+
+    - Rozmiar: Array w Javie ma stały rozmiar. Nie możemy zmienić rozmiaru Array po utworzeniu.
+List ma dynamiczny rozmiar. Kiedy dodajemy elementy do List, jej pojemność wzrasta automatycznie;
+    - Wydajność: W Javie Array i List zapewniają różną wydajność dla różnych operacji;
+    - Prymitywy: Array może zawierać zarówno prymitywne  typy danych, jak i obiekty. Ale List
+nie może zawierać prymitywnych typów danych. Zawiera tylko obiekty;
+    - Iterator: W List używamy obiektu Iterator do iteracji po elementach. Używamy pętli
+for do iteracji elementów Array;
+    - Długość: Rozmiar List można uzyskać za pomocą metody size(). Arrayma zmienną length,
+która jest taka sama jak długość/rozmiar tablicy;
+    - Wielowymiarowość : Array może być wielowymiarowy. List jest zawsze jednowymiarowy;
+    - Dodawanie elementów: W List możemy użyć metody add() do dodawania obiektów. Array używa
+operatora przypisania dla dodawania elementów;
+    -Bezpieczeństwo typów: Java pomaga zapewnić bezpieczeństwo typów elementów w List przy
+użyciu generyków. Array może zawierać obiekty tego samego typu klasy.
+
